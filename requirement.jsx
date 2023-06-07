@@ -8,19 +8,7 @@ const requirement = () => {
             <h4>
                 1. Make sure to keep the navbar and footer on all the pages except on the 404 page. Create a good, stylish, and meaningful footer. (including website logo or name or both,
                 copyright, some contact information, Address etc.)
-            </h4>
-
-            <h4>
-                2. Focus on making the website visually appealing. Ensure that
-
-                color contrast is pleasing to the eye
-                the website does not have a  gobindo design
-                the website has proper alignment and space
-                Do not directly copy-paste a component design from a component library you are using. You will have to customize the design. (e.g. If you are using DaisyUi & you decided
-                to use a card component, you will have to customize the styling of that card rather than just copy & paste it)
-
-            </h4>
-
+            </h4> 
 
             <h4>
                 2. Focus on making the website visually appealing. Ensure that
