@@ -10,7 +10,7 @@ const NavigationBar = () => {
     </>
     return (
         < >
-            <div className="navbar bg-base-100">
+            <div className="navbar fixed z-10 bg-purple-600 bg-opacity-50 max-w-screen-xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
