@@ -1,4 +1,4 @@
-import logo from '../../../../public/nameLogo.png'
+import logo from '../../../assets/logo/nameLogo.png'
 
 const NavigationBar = () => {
     const navOptions = <>
