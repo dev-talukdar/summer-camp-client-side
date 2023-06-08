@@ -15,7 +15,7 @@ const PopularClassCard = ({ pclass }) => {
                 <div className="flex items-center gap-2">
                     <Rating
                         style={{ maxWidth: 120 }}
-                        value={3}
+                        value={rating}
                         readOnly
                     />
                 <p>{rating}</p>
