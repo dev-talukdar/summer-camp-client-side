@@ -1,4 +1,4 @@
-import header from '../../assets/component/fashion_springburn_lecturer_student-4s.jpg'
+import header from '../../assets/imgComponent/fashion_springburn_lecturer_student-4s.jpg'
 
 const PoInstructor = () => {
     return (

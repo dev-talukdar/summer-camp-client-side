@@ -2,13 +2,7 @@
 
 const requirement = () => {
     return (
-        <div>
-
-
-            <h4>
-                1. Make sure to keep the navbar and footer on all the pages except on the 404 page. 
-            </h4>  
-            
+        <div> 
             <h4>
                 3. Your website should have a navbar with the Website logo or Website name, Home, Instructors, Classes, Dashboard and User profile picture. The user profile picture and
                 Dashboard on the navbar are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the Login button.

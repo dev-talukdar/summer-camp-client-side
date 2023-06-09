@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import InstructorCard from "./InstructorCard";
-import { Helmet } from "react-helmet";
+import InstructorCard from "./InstructorCard"; 
 
 
 
@@ -10,7 +9,7 @@ const Instructors = () => {
     const [instructors, setInstructors] = useState([])
 
     useEffect(() => {
-        fetch('popularClass.json')
+        fetch('http://localhost:5000/mainData')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data);
@@ -19,9 +18,7 @@ const Instructors = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>Instructors | Fashion Camp</title>
-            </Helmet>
+           
             <div className="mt-16 mb-6">
 
                 <div className="divider"><p className="font-bold text-3xl">Popular Instructors</p> </div>
