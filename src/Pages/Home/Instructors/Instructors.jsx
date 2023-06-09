@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import InstructorCard from "./InstructorCard";
+import { Helmet } from "react-helmet";
 
 
 
 const Instructors = () => {
 
     const [instructors, setInstructors] = useState([])
-    
+
     useEffect(() => {
         fetch('popularClass.json')
             .then(res => res.json())
@@ -17,18 +18,24 @@ const Instructors = () => {
     }, []);
 
     return (
-        <div className="mt-6 mb-6">
-            <div className="divider"><p className="font-bold text-3xl">Popular Classes</p> </div>
+        <div>
+            <Helmet>
+                <title>Instructors | Fashion Camp</title>
+            </Helmet>
+            <div className="mt-16 mb-6">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {
-                    instructors.map(instructor => <InstructorCard
-                        key={instructor._id}
-                        instructor={instructor}
-                    ></InstructorCard>)
-                }
+                <div className="divider"><p className="font-bold text-3xl">Popular Instructors</p> </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {
+                        instructors.map(instructor => <InstructorCard
+                            key={instructor._id}
+                            instructor={instructor}
+                        ></InstructorCard>)
+                    }
+                </div>
+
             </div>
-
         </div>
     );
 };

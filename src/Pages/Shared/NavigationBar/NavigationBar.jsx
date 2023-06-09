@@ -3,11 +3,11 @@ import logo from '../../../assets/logo/nameLogo.png'
 
 const NavigationBar = () => {
     const navOptions = <>
-        <Link to="/"><li className='text-white'><a>Home</a></li></Link>
-        <Link to="instructors"><li className='text-white'><a>Instructors</a></li></Link>
-        <Link to="classes"><li className='text-white'><a>Classes</a></li></Link>
-        <Link to="dashboard"><li className='text-white'><a>Dashboard</a></li></Link>
-        <Link to="login"><li className='text-white'><a>Login</a></li></Link>
+        <Link to="/"><li className='text-gray-900'><a>Home</a></li></Link>
+        <Link to="instructors"><li className='text-gray-900'><a>Instructors</a></li></Link>
+        <Link to="classes"><li className='text-gray-900'><a>Classes</a></li></Link>
+        <Link to="dashboard"><li className='text-gray-900'><a>Dashboard</a></li></Link>
+        <Link to="login"><li className='text-gray-900'><a>Login</a></li></Link>
     </>
     return (
         < >

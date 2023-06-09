@@ -1,4 +1,5 @@
 import { Rating } from "@smastrom/react-rating";
+import { MdEmail } from 'react-icons/md';
 
 
 
@@ -12,7 +13,10 @@ const InstructorCard = ({ instructor }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{instructor_name }</h2>
-                <p>email: {email }</p>
+                <div className="flex justify-center items-center gap-3">
+                <MdEmail className="text-purple-600"></MdEmail> 
+                <p>{email }</p>
+                </div>
                 <p>Enrolled Students: {total_enrollment }</p>
                 <div className="flex items-center gap-2">
                     <Rating
