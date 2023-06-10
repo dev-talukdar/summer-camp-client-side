@@ -2,31 +2,42 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/nameLogo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
-        .then(() => {
+            .then(() => {
 
-        })
-        .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
 
     }
 
 
     const navOptions = <>
-        <Link to="/"><li className='text-gray-900'><a>Home</a></li></Link>
-        <Link to="instructors"><li className='text-gray-900'><a>Instructors</a></li></Link>
-        <Link to="classes"><li className='text-gray-900'><a>Classes</a></li></Link>
-        <Link to="dashboard"><li className='text-gray-900'><a>Dashboard</a></li></Link>
+        <Link to="/"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Home</li></Link>
+        <Link to="instructors"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Instructors</li></Link>
+        <Link to="classes"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Classes</li></Link>
 
         {
-            user ? <>
-            <button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button>
+            user ? (<Link to="dashboard"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
+        }
+        <li>
+            <Link to="/">
+                <span className="text-xl">   <FaShoppingCart></FaShoppingCart></span>
+                <div className="badge badge-primary">+0</div>
+            </Link>
+        </li>
+
+
+        {
+            user ? <> 
+                <button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button>
             </> : <>
-            <Link to="login"><li className='text-gray-900'><a>Login</a></li></Link>
+                <Link to="login"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Login</li></Link>
             </>
         }
 
@@ -43,7 +54,7 @@ const NavigationBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <img className='w-2/4' src={logo} alt="" />
+                    <Link to="/"><img className='w-2/4' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -51,7 +62,7 @@ const NavigationBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button>Button</button>
                 </div>
             </div>
 

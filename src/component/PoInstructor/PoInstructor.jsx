@@ -4,7 +4,7 @@ const PoInstructor = () => {
     return (
         <div>
             <img src={header} alt="" />
-            <div className="divider">Popular Instructors</div>
+             
             
         </div>
     );

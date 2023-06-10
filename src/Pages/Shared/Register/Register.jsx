@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext)
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data);
@@ -15,6 +17,21 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                updateUserProfile(data.name, data.photoUrl)
+                    .then(() => {
+                        console.log('user profile information updated');
+                        reset()
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Registration successfully done, Please log in now !',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                        navigate('/login')
+
+                    })
+                    .catch(error => console.log(error))
             })
     }
 
@@ -58,7 +75,10 @@ const Register = () => {
                                 <input id="email" className=" pl-2 w-full outline-none border-none" type="email" {...register("email", { required: true })} name="email" placeholder="Email Address" />
                             </div>
 
-                            {errors.password && <span className='text-red-600'>Password is required</span>}
+                            {errors.password?.type === 'required' && <span className='text-red-600 text-center'>Password is required</span>}
+                            {errors.password?.type === 'minLength' && <span className='text-red-600 text-center'>Password must be 6 characters</span>}
+                            {errors.password?.type === 'maxLength' && <span className='text-red-600 text-center'>Password must be less than 20 characters</span>}
+                            {errors.password?.type === 'pattern' && <span className='text-red-600 text-center'>Password must contain upper case <br /> number and special character</span>}
                             <div className="flex items-center border-2 py-2 px-3  mb-8 rounded-2xl ">
                                 <input className="pl-2 w-full outline-none border-none" type="password" {...register("password", {
                                     required: true,

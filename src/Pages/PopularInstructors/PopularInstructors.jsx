@@ -1,37 +1,28 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import PopularInstructorsCard from "./PopularInstructorsCard";
+ 
 import PoInstructor from "../../component/PoInstructor/PoInstructor";
+import { Helmet } from "react-helmet";
+import Instructors from "../Home/Instructors/Instructors";
 
 
 
 
 
 const PopularInstructors = () => {
-
-    const [instructors, setInstructors] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:5000/mainData')
-            .then(res => res.json())
-            .then(data => {
-                setInstructors(data);
-            });
-    }, []);
+ 
 
     return (
+        <>
+        <Helmet>
+            <title>Instructors | Fashion Camp</title>
+        </Helmet>
+        
         <div>
             <PoInstructor></PoInstructor>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {
-                    instructors.map(instructor => <PopularInstructorsCard
-                        key={instructor._id}
-                        instructor={instructor}
-                    ></PopularInstructorsCard>)
-                }
-            </div>
+            <Instructors></Instructors>
+             
 
         </div>
+        </>
     );
 };
 

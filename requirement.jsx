@@ -12,29 +12,9 @@ const requirement = () => {
             <h4>
                 4. Registration & Login System:
 
-                Login Page: When a user clicks on the login button, they will be redirected to the login page having the following:
+                 
 
-                Email
-                Password (This field can hide/unhide the password by clicking on an icon)
-                A link that will redirect to the registration page
-                Keep at least one social login
-
-                Registration Page: The Registration page will have the Email/Password form having the following fields:
-
-                Name
-                Email
-                Password
-                Confirm Password
-                Photo URL
-                (optional) Gender
-                (optional) Phone Number
-                (optional) Address
-
-                Note: Keep at least one social login
-
-                Note: Do not enforce forget password feature and the email verification method, as it will inconvenience the examiner. If you want, you can add email verification/forget
-                the password after receiving the assignment result.
-
+                Note: Keep at least one social login 
 
                 Error for Registration system: On the Registration page, display errors when:
 
