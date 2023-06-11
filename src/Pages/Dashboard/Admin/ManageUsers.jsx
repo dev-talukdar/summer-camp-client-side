@@ -79,13 +79,13 @@ const ManageUsers = () => {
                                     <td>{user.email} </td>
                                     <td>{user.role}</td>
                                     <td>
-                                        {user.role === 'admin' ? 'admin' :
+                                        {user.role === 'admin' ?  <button className="btn btn-disabled btn-xs ">Make Admin</button> :
                                             <button onClick={() => handleMakeAdmin(user)} className="btn btn-primary btn-xs hover:bg-violet-600 border-none"> MAKE ADMIN
                                             </button>
                                         }
                                     </td>
 
-                                    <td>{user.role === 'instructor' ? 'instructor' :
+                                    <td>{user.role === 'instructor' ? <button className="btn btn-disabled btn-xs ">Make Instructor</button> :
                                         <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-xs hover:bg-violet-600 border-none">MAKE INSTRUCTOR</button>}
                                     </td>
                                 </tr>)
