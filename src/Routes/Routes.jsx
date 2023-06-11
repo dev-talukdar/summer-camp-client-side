@@ -3,11 +3,14 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Shared/Login/Login"; 
 import Register from "../Pages/Shared/Register/Register";
-import Classes from "../Pages/Classes/Classes";
-import Dashboard from "../Pages/Dashboard/Dashboard";
+import Classes from "../Pages/Classes/Classes"; 
 import PopularInstructors from "../Pages/PopularInstructors/PopularInstructors";
-import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage"; 
+import Dashboard from "../Layout/Dashboard"; 
+import MySelectedClass from "../Pages/Dashboard/Student/MySelectedClass";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+import MyEnrolledClass from "../Pages/Dashboard/Student/MyEnrolledClass";
+import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -36,12 +39,30 @@ export const router = createBrowserRouter([
           element: <Register></Register>
       },
 
-      ]
-    },
+      ]      
+    }, 
     {
       path: 'dashboard',
-      element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
-    }
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'mycart',
+          element: <MyCart></MyCart>
+        },
+        {
+          path: 'selected-class',
+          element: <MySelectedClass></MySelectedClass>
+        },
+        {
+          path: 'enrolled-class',
+          element: <MyEnrolledClass></MyEnrolledClass>
+        },
+        {
+          path: 'payment-history',
+          element: <PaymentHistory></PaymentHistory>
+        }
+      ]
+    }    
   ]);
 
  

@@ -1,5 +1,3 @@
-
-
 const requirement = () => {
     return (
         <div> 
@@ -8,82 +6,36 @@ const requirement = () => {
                 Dashboard on the navbar are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the Login button.
 
             </h4>
-
             <h4>
-                4. Registration & Login System:
-
-                 
-
-                Note: Keep at least one social login 
-
-                Error for Registration system: On the Registration page, display errors when:
-
-                The password
-
-                is less than 6 characters
-                dont have a capital letter
-                dont have a special character
-
-                Note: A user cannot submit empty email and password fields.
-
-            </h4>
-
-            <h4>
-                5. Top Slider Section - Will have a relevant slider. Use relevant text, information, message, and picture. The design is entirely up to you.
-
-                Popular Classes Section - Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
-
-                Popular Instructors Section - Show relevant pictures related to the classes or activities. Show the top 6 instructors based on the number of students in their Class.
-                However, selecting top instructors based on the number of students is optional, but you must show 6 instructors.
-
-                Extra Section - Add one relevant sections. Make it attractive 😍. Try to use animation effects.
-
-            </h4>
-
-
-            <h4>
-                6. Instructors Page: Display all the instructors. Each Instructor will be:
-                Image
-                Name
-                Email
+                4. Registration & Login System:  Note: Keep at least one social login  
+            </h4> 
+             <h4>
+                6.  
                 (optional) Number of Classes taken by the Instructor.
                 (optional) Name of the Classes taken by the Instructor.
                 (optional) See Classes button to show classes by this Instructor. This will take you to a new link
 
             </h4>
-
-
             <h4>
-                7. Classes page: Show all approved classes on this page. Each Class will have the following:
-                Image
-                Name
-                Instructor name
-                Available seats
-                Price
+                7. Classes page: Show all approved classes on this page. Each Class will have the following: 
                 Select Button. If the user is not logged in, then tell the user to log in before selecting the course. This button will be disabled if:
                 Available seats are 0
                 Logged in as admin/instructor
                 The class card background will be red if the available seats are 0.
-
             </h4>
-
-
             <h4>
                 8. Student Dashboard:
                 It will be private & only a student can access this route.
-
                 My Selected Classes: The student will see all the Classes they booked after clicking the Select button. You must display the relevant information on the Class, Delete,
                 and Pay buttons. More in point 9. On clicking the Delete button, a student can remove a selected Class from the list.
-
                 My Enrolled Classes: Show all the Classes a student selected after successful payment.
 
             </h4>
-
             <h4>
                 9. Payment: (Student Dashboard)
 
                 Pay button Action: Upon clicking the Pay button for a Class on the My Selected Classes, the student will be redirected to the payment page to finalize their payment.
-                After a successful payment, the Available seats for the particular Class will be reduced by 1. The Class information will be shown on the My Enrolled Classes pageand
+                After a successful payment, the Available seats for the particular Class will be reduced by 1. The Class information will be shown on the My Enrolled Classes page and
                 removed from the My Selected Classes page.
 
                 Create a payment history page for students. It will show the payment made by that student. Make sure to sort the payment history descending. The newest payment will be at
@@ -91,7 +43,6 @@ const requirement = () => {
 
 
             </h4>
-
             <h4>
                 10. Instructor Dashboard:
                 It will be private & only an instructor can access this route.
@@ -143,7 +94,6 @@ const requirement = () => {
                 Make Admin button Action: Update the user role as an admin.
 
             </h4>
-
             <h4>
                 12.
                 Use relevant icons in your dashboard menus, animations on your website.. You have to use anyone of the animation libraries below:
@@ -153,15 +103,12 @@ const requirement = () => {
                 React-spring
                 React-anime
             </h4>
-
             <div>
                 <h2>BOUNS TASK: </h2>
-
                 <h4>
                     1. Minimum 20 meaningful git commits on the client-side repository and 12 meaningful commits on the server-side repository.
                     Feel free to commit as many as needed to save your progress during load-shedding.
                 </h4>
-
                 <h4>
                     2. Create a readme for the client-side and write about your project.
 
@@ -170,46 +117,32 @@ const requirement = () => {
                     Used packages/ technology name
                     Live site link
                 </h4>
-
                 <h4>
                     3. Implementing a dark/light theme toggle for the home page. Its optional to implement the theme toggle for the entire website.
                 </h4>
-
                 <h4>
                     4. Make the home page responsive. If possible, Make your entire website responsive. (It is ok if the table is not responsive.)
                 </h4>
-
                 <h4>
                     5. Use tanstack query (react-query) in at least two places. If needed, you can use it everywhere.
                 </h4>
-
                 <h4>
                     6. use Axios for at least two calls.
                 </h4>
-
                 <h4>
                    7. Must Use react-hook-form in the registration & login page. Using react hook form in another place is optional.
                 </h4>
-
                 <h4>
                     8. Use the Environment variables both on the client side & server side.
                 </h4>
-
                 <h4>
                     9. Implement JWT token for Login and Registration systems (Email/ password & social login). You will send the token for the Dashboard routes and verify the user.
                 </h4>
-
                 <h4>
                     10. Create a 404 page. Add any interesting image/ animation & a back-to-home button on the 404 page. Do not add header & footer in this page.
                 </h4>
-
-
-            </div>
-
-
-
+            </div> 
         </div>
     );
 };
-
 export default requirement;
