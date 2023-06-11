@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
@@ -12,23 +13,39 @@ const Register = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data);
+
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
                 updateUserProfile(data.name, data.photoUrl)
                     .then(() => {
-                        console.log('user profile information updated');
-                        reset()
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Registration successfully done, Please log in now !',
-                            showConfirmButton: false,
-                            timer: 2000
+                        const saveUser = {name: data.name, email: data.email}
+
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers:{
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
                         })
-                        navigate('/login')
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset()
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Registration successfully done, Please log in now !',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    navigate('/login')
+                                }
+                            })
+
+
 
                     })
                     .catch(error => console.log(error))
@@ -104,9 +121,10 @@ const Register = () => {
                             {errors.photoUrl && <span className='text-red-600'>Please enter a valid photo URL</span>}
 
                             <button type="submit" className="block w-full bg-indigo-600 mt-5 py-2 rounded-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2">Register</button>
+                            <SocialLogin></SocialLogin>
                             <div className="flex justify-between mt-4">
 
-                                <p><small> Have an existing account ? <Link to="/login"><span className="text-sm ml-2 text-violet-700 font-medium hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all" >Login</span></Link></small> </p>
+                                <p><small> Have an existing account ? Please <Link to="/login"><span className="text-sm ml-2 text-violet-700 font-medium hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all" >Login</span></Link></small> </p>
                             </div>
 
                         </form>

@@ -6,9 +6,12 @@ const requirement = () => {
                 Dashboard on the navbar are conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the Login button.
 
             </h4>
-            <h4>
-                4. Registration & Login System:  Note: Keep at least one social login  
-            </h4> 
+             
+             
+                1. --- done
+                2. --- done
+                4. --- done
+                5. --- done
              <h4>
                 6.  
                 (optional) Number of Classes taken by the Instructor.

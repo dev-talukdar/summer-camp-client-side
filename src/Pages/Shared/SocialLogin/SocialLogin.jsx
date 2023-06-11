@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { useContext } from "react"; 
+import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const SocialLogin = () => {
     const { googleSignIn } = useContext(AuthContext)
@@ -17,7 +17,7 @@ const SocialLogin = () => {
                 console.log(loggedInUser)
 
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('https://bistro-boss-server-side-omega.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -37,9 +37,7 @@ const SocialLogin = () => {
             <div className="divider">OR</div>
             <div className="mt-5 flex justify-center gap-9 text-2xl">
 
-                <button onClick={handleGoogleSignIn}><FaGoogle className="hover:text-orange-600"></FaGoogle></button>
-                <button><FaFacebook className="hover:text-sky-600"></FaFacebook></button>
-                <button><FaTwitter className="hover:text-blue-600"></FaTwitter></button>
+                <button onClick={handleGoogleSignIn}><FcGoogle className="hover:text-orange-600"></FcGoogle></button> 
             </div>
         </div>
     );

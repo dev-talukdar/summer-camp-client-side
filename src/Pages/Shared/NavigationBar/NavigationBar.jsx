@@ -25,7 +25,7 @@ const NavigationBar = () => {
         <Link to="classes"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Classes</li></Link>
 
         {
-            user ? (<Link to="dashboard"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
+            user ? (<Link to="/dashboard/selected-class"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
         }
         <li>
             <Link to="/dashboard/selected-class">
@@ -63,8 +63,16 @@ const NavigationBar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button>Button</button>
+                <div className="navbar-end  ">
+
+                    {user && <div title={user.displayName}>
+                        <div className='avatar'>
+                            <div className='w-14 rounded-full'>
+                                <img className='' src={user.photoURL} alt="" />
+                            </div>
+                        </div>
+                    </div>}
+
                 </div>
             </div>
 

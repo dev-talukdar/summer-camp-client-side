@@ -46,10 +46,10 @@ const MySelectedClass = () => {
                 <title>Selected Class | Fashion Camp</title>
             </Helmet>
             <div className="w-full">
-                <div className="uppercase flex gap-16">
-                    <h3 className="text-2xl">Total Enroll: {cart.length}</h3>
-                    <h3 className="text-2xl">Total price: ${total}</h3>
-                    <button className="btn btn-warning btn-sm">PAY</button>
+                <div className="uppercase flex justify-around mb-10">
+                    <h3 className="text-xl text-purple-500">Total Enroll: {cart.length}</h3>
+                    <h3 className="text-xl text-purple-500">Total price: ${total}</h3>
+                    <button className="btn btn-warning btn-sm hover:-translate-y-1 duration-500 transition-all">PAY</button>
                 </div>
 
 

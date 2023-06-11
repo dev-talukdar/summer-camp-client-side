@@ -11,6 +11,10 @@ import MySelectedClass from "../Pages/Dashboard/Student/MySelectedClass";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import MyEnrolledClass from "../Pages/Dashboard/Student/MyEnrolledClass";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory";
+import PrivateRoutes from "./PrivateRoutes";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
+import ManageClasses from "../Pages/Dashboard/Admin/ManageClasses";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 
 export const router = createBrowserRouter([
     {
@@ -43,23 +47,35 @@ export const router = createBrowserRouter([
     }, 
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
       children: [
         {
           path: 'mycart',
           element: <MyCart></MyCart>
         },
         {
+          path: 'admin-home',
+          element: <PrivateRoutes><AdminHome></AdminHome></PrivateRoutes>
+        },
+        {
+          path: 'manage-classes',
+          element: <PrivateRoutes><ManageClasses></ManageClasses></PrivateRoutes>
+        },
+        {
+          path: 'manage-users',
+          element: <PrivateRoutes><ManageUsers></ManageUsers></PrivateRoutes>
+        },
+        {
           path: 'selected-class',
-          element: <MySelectedClass></MySelectedClass>
+          element: <PrivateRoutes><MySelectedClass></MySelectedClass></PrivateRoutes>
         },
         {
           path: 'enrolled-class',
-          element: <MyEnrolledClass></MyEnrolledClass>
+          element: <PrivateRoutes><MyEnrolledClass></MyEnrolledClass></PrivateRoutes>
         },
         {
           path: 'payment-history',
-          element: <PaymentHistory></PaymentHistory>
+          element: <PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>
         }
       ]
     }    

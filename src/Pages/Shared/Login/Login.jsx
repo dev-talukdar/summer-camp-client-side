@@ -5,6 +5,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -99,15 +100,16 @@ const Login = () => {
 
 
                             <button disabled={disabled} type="submit" className="block w-full bg-indigo-600 mt-5 py-2 rounded-2xl hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2">Login</button>
+                            <SocialLogin></SocialLogin>
                             <div className="flex justify-between mt-4">
                                 <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">Forgot Password ?</span>
 
                                 <p><small> New to Fashion Camp ? <Link to="/register"><span className="text-sm ml-2 text-violet-700 font-medium hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all" >Register</span></Link></small> </p>
                             </div>
 
+
                         </form>
                     </div>
-
                 </div>
             </div>
         </>

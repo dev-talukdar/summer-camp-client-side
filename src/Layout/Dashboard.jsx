@@ -1,15 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaHome, FaUsers, FaUserGraduate } from "react-icons/fa";
+import { FaWallet, FaHome, FaUsers, FaUserGraduate, FaUserCog } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { GrLogout } from "react-icons/gr";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import useCart from "../hooks/useCart";
+import { MdOutlineManageHistory } from "react-icons/md";
 
 
 const Dashboard = () => {
-    const { logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const [cart] = useCart()
+
+    //TODO load data from the server to have dynamic isAdmin based on Data
+    const isAdmin = true;
 
     const handleLogOut = () => {
         logOut()
@@ -32,13 +36,34 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-gradient-to-r from-violet-400  to-purple-600 text-base-content text-xl font-medium">
 
-                    <li className="mt-64">
-                        <NavLink to="/dashboard/selected-class"><BsBriefcaseFill></BsBriefcaseFill>My Selected Classes
-                        <span className="badge badge-primary">+{cart?.length || 0}</span>
-                        </NavLink>
-                    </li>
-                    <li className="mt-2"><NavLink to="/dashboard/enrolled-class"><FaUserGraduate></FaUserGraduate>My Enrolled Classes</NavLink></li>
-                    <li className="mt-2"><NavLink to="/dashboard/payment-history"><FaWallet></FaWallet>Payment History</NavLink></li>
+                    {user && <div>
+                        <div className='avatar flex justify-center  '>
+                            <div className='w-24 rounded-full'>
+                                <img className='' src={user.photoURL} alt="" />
+                            </div>
+                        </div>
+                        <p className="mt-3">{user.displayName}</p>
+                    </div>}
+
+                    {
+                        isAdmin ? <>
+                            <li className="mt-64">
+                                <NavLink to="/dashboard/admin-home"><BsBriefcaseFill></BsBriefcaseFill>Admin Home</NavLink>
+                            </li>
+                            <li className="mt-2"><NavLink to="/dashboard/manage-classes"><MdOutlineManageHistory></MdOutlineManageHistory>Manage Classes</NavLink></li>
+                            <li className="mt-2"><NavLink to="/dashboard/manage-users"><FaUserCog></FaUserCog>Manage Users</NavLink></li>
+
+                        </> : <>
+
+                            <li className="mt-64">
+                                <NavLink to="/dashboard/selected-class"><BsBriefcaseFill></BsBriefcaseFill>My Selected Classes
+                                    <span className="badge badge-primary">+{cart?.length || 0}</span>
+                                </NavLink>
+                            </li>
+                            <li className="mt-2"><NavLink to="/dashboard/enrolled-class"><FaUserGraduate></FaUserGraduate>My Enrolled Classes</NavLink></li>
+                            <li className="mt-2"><NavLink to="/dashboard/payment-history"><FaWallet></FaWallet>Payment History</NavLink></li>
+                        </>
+                    }
 
                     <div className="divider"></div>
 
