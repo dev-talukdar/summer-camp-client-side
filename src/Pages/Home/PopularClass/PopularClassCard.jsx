@@ -5,36 +5,39 @@ import { FaUsers } from 'react-icons/fa';
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useCart from "../../../hooks/useCart";
 
 
 const PopularClassCard = ({ pclass }) => {
     const { course_name, course_picture_url, total_enrollment, rating, instructor_name, available_seats, price, _id } = pclass;
     const { user } = useContext(AuthContext)
+    const [, refetch] = useCart()
     const navigate = useNavigate()
     const location = useLocation()
 
     const handleEnrollNow = pclass => {
         console.log(pclass);
         if (user && user.email) {
-            const classAdded = { addedClassId: _id, course_name, course_picture_url, total_enrollment, rating, instructor_name, available_seats, price }
+            const classAddedToCart = { classId: _id, course_name, course_picture_url, total_enrollment, rating, instructor_name, available_seats, price, email: user.email }
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(classAdded)
+                body: JSON.stringify(classAddedToCart)
             })
 
-                .then(res => res.json())
+                .then(res => res.json()) 
                 .then(data => {
                     if (data.insertedId) {
+                        refetch() // refecth cart update the number of cart
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
                             title: 'Class added in your Cart',
                             showConfirmButton: false,
                             timer: 2000
-                        })
+                         })
                     }
                 })
         }

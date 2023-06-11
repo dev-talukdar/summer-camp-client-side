@@ -3,9 +3,11 @@ import logo from '../../../assets/logo/nameLogo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
+import useCart from '../../../hooks/useCart';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart()
 
     const handleLogOut = () => {
         logOut()
@@ -28,13 +30,13 @@ const NavigationBar = () => {
         <li>
             <Link to="/">
                 <span className="text-xl">   <FaShoppingCart></FaShoppingCart></span>
-                <div className="badge badge-primary">+0</div>
+                <div className="badge badge-primary">+{cart?.length || 0}</div>
             </Link>
         </li>
 
 
         {
-            user ? <> 
+            user ? <>
                 <button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button>
             </> : <>
                 <Link to="login"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Login</li></Link>
