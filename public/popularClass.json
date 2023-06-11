@@ -7,7 +7,7 @@
     "rating": 4.2,
     "instructor_name": "John Smith",
     "email": "johnsmith@example.com",
-    "price": "$42",
+    "price": 42,
     "instructor_photo_url": "https://cdn-edcnk.nitrocdn.com/PSaIWXjqkelWPpnJnijqymZXwpeyImuQ/assets/images/optimized/rev-0fc88f9/wp-content/uploads/2021/10/Slight-Angling.jpg",
     "available_seats": 10
   },
@@ -19,7 +19,7 @@
     "rating": 4.8,
     "instructor_name": "Emily Johnson",
     "email": "emilyjohnson@example.com",
-    "price": "$35",
+    "price": 35,
     "instructor_photo_url": "https://www.epicscotland.com/wp-content/uploads/2019/09/Business-Headshot-Women-011.jpg",
     "available_seats": 8
   },
@@ -31,22 +31,10 @@
     "rating": 4.5,
     "instructor_name": "David Wilson",
     "email": "davidwilson@example.com",
-    "price": "$48",
+    "price": 48,
     "instructor_photo_url": "https://www.corporatephotographylondon.com/wp-content/uploads/2017/06/approachable-professional-headshots_1.jpg",
     "available_seats": 12
-  },
-  {
-    "_id": "d6f3h2g1y9",
-    "course_name": "Fashion Design Principles",
-    "course_picture_url": "https://i0.wp.com/textilemerchandising.com/wp-content/uploads/2018/12/zszf.jpg",
-    "total_enrollment": 55,
-    "rating": 4.3,
-    "instructor_name": "Sarah Davis",
-    "email": "sarahdavis@example.com",
-    "price": "$40",
-    "instructor_photo_url": "https://images.squarespace-cdn.com/content/v1/56e8acb88a65e2ee7d9a969b/1525307436704-IP70CQ48E089EDFZYFUR/VCA+headshots+-+Lachlan+Woods+Photography+-+Actor+Headshot+Photographer+Melbourne-4.jpg",
-    "available_seats": 6
-  },
+  }, 
   {
     "_id": "o7p2g6j4k9",
     "course_name": "Fashion Styling and Trend",
@@ -55,7 +43,7 @@
     "rating": 4.7,
     "instructor_name": "Michael Anderson",
     "email": "michaelanderson@example.com",
-    "price": "$50",
+    "price": 50,
     "instructor_photo_url": "https://images.squarespace-cdn.com/content/v1/573610d2cf80a1b5becb9edd/1466117001699-IE99RSB4I39GN29AGOWR/good-headshot-example.jpg",
     "available_seats": 15
   },
@@ -67,22 +55,10 @@
     "rating": 4.1,
     "instructor_name": "Jessica Thompson",
      "email": "jessicathompson@example.com",
-      "price": "$40",
+      "price": 40,
       "instructor_photo_url": "https://i.pinimg.com/originals/de/21/a1/de21a15c392d8d0f800785410d56b90d.jpg",
       "available_seats": 13
-  },
-  {
-    "_id": "b6n3m8x5c7",
-    "course_name": "Fashion Practices",
-    "course_picture_url": "https://www.projectcece.com/static/_versions/_versions/blogs/customer_checking_garments_to_avoid_fashion_greenwashing_practices_large_large.jpg",
-    "total_enrollment": 60,
-    "rating": 4.6,
-    "instructor_name": "Daniel Brown",
-     "email": "danielbrown@example.com",
-      "price": "$54",
-      "instructor_photo_url": "https://images.squarespace-cdn.com/content/v1/573610d2cf80a1b5becb9edd/1492634333984-NSZET10PFXWNUG5ILP0L/headshot+photographers.jpg",
-      "available_seats": 12
-  },
+  }, 
   {
     "_id": "k3l8y4d9f6",
     "course_name": "Fashion Portfolio Development",
@@ -91,7 +67,7 @@
     "rating": 4.4,
     "instructor_name": "Olivia Wilson",
      "email": "oliviawilson@example.com",
-      "price": "$35",
+      "price": 35,
       "instructor_photo_url": "https://realestatebees.com/wp-content/uploads/2022/08/Matthew-Wilson_Female-Real-Estate-Headshot-Examples-min.jpeg",
       "available_seats": 8
   }

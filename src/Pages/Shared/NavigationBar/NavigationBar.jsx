@@ -28,7 +28,7 @@ const NavigationBar = () => {
             user ? (<Link to="dashboard"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
         }
         <li>
-            <Link to="/dashboard/mycart">
+            <Link to="/dashboard/selected-class">
                 <span className="text-xl">   <FaShoppingCart></FaShoppingCart></span>
                 <div className="badge badge-primary">+{cart?.length || 0}</div>
             </Link>
