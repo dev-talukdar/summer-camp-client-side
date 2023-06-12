@@ -17,8 +17,7 @@ const requirement = () => {
             <h4>
                 7.  
                 Select Button. If the user is not logged in, then tell the user to log in before selecting the course. This button will be disabled if:
-                Available seats are 0
-                Logged in as admin/instructor
+                Available seats are 0 
                 The class card background will be red if the available seats are 0.
             </h4>
             <h4>
