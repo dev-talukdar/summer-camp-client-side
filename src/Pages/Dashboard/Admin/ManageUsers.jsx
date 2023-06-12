@@ -89,9 +89,7 @@ const ManageUsers = () => {
                                         <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-xs hover:bg-violet-600 border-none">MAKE INSTRUCTOR</button>}
                                     </td>
                                 </tr>)
-                            }
-                            {/*   */}
-                            {/*   */}
+                            } 
 
 
 

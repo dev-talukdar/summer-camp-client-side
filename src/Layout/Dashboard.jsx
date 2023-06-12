@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import useCart from "../hooks/useCart";
 import { MdOutlineManageHistory } from "react-icons/md";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 
 const Dashboard = () => {
@@ -13,7 +15,9 @@ const Dashboard = () => {
     const [cart] = useCart()
 
     //TODO load data from the server to have dynamic isAdmin based on Data
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
 
     const handleLogOut = () => {
         logOut()
@@ -48,12 +52,19 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                             <li className="mt-64">
-                                <NavLink to="/dashboard/admin-home"><BsBriefcaseFill></BsBriefcaseFill>Admin Home</NavLink>
-                            </li>
+                                <NavLink to="/dashboard/admin-home"><BsBriefcaseFill></BsBriefcaseFill>Admin Home</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/manage-classes"><MdOutlineManageHistory></MdOutlineManageHistory>Manage Classes</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/manage-users"><FaUserCog></FaUserCog>Manage Users</NavLink></li>
 
-                        </> : <>
+                        </> : isInstructor? <> 
+                       
+                            <li className="mt-64">
+                                <NavLink to="/dashboard/instructor-home"><BsBriefcaseFill></BsBriefcaseFill>Instructor Home</NavLink></li>
+                            <li className="mt-2"><NavLink to="/dashboard/my-classes"><MdOutlineManageHistory></MdOutlineManageHistory>My Classes</NavLink></li>
+                            <li className="mt-2"><NavLink to="/dashboard/add-a-class"><MdOutlineManageHistory></MdOutlineManageHistory>Add A Class</NavLink></li>
+                            <li className="mt-2"><NavLink to="/dashboard/total-enrolled-students"><FaUserCog></FaUserCog>Total Enrolled Students</NavLink></li>
+
+                        </> : <> 
 
                             <li className="mt-64">
                                 <NavLink to="/dashboard/selected-class"><BsBriefcaseFill></BsBriefcaseFill>My Selected Classes

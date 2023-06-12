@@ -25,7 +25,7 @@ const NavigationBar = () => {
         <Link to="classes"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Classes</li></Link>
 
         {
-            user ? (<Link to="/dashboard/selected-class"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
+            user ? (<Link to="/dashboard/admin-home"><li className='text-gray-900 font-bold mr-5 mt-3 hover:text-white'>Dashboard</li></Link>) : null
         }
         <li>
             <Link to="/dashboard/selected-class">
