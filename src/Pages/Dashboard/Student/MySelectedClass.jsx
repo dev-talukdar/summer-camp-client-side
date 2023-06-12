@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -22,7 +23,7 @@ const MySelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${classes._id}`, {
+                fetch(`https://summer-camp-server-side-navy.vercel.app/carts/${classes._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -49,7 +50,7 @@ const MySelectedClass = () => {
                 <div className="uppercase flex justify-around mb-10">
                     <h3 className="text-xl text-purple-500">Total Enroll: {cart.length}</h3>
                     <h3 className="text-xl text-purple-500">Total price: ${total}</h3>
-                    <button className="btn btn-warning btn-sm hover:-translate-y-1 duration-500 transition-all">PAY</button>
+                    <Link to="/dashboard/payment"><button className="btn btn-warning btn-sm hover:-translate-y-1 duration-500 transition-all">PAY</button></Link>
                 </div>
 
 

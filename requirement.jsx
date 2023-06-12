@@ -122,27 +122,17 @@ const requirement = () => {
                 <h4>
                     3. Implementing a dark/light theme toggle for the home page. Its optional to implement the theme toggle for the entire website.
                 </h4>
-                <h4>
-                    4. Make the home page responsive. If possible, Make your entire website responsive. (It is ok if the table is not responsive.)
-                </h4>
-                <h4>
-                    5. Use tanstack query (react-query) in at least two places. If needed, you can use it everywhere.
-                </h4>
-                <h4>
-                    6. use Axios for at least two calls.
-                </h4>
+                
+                 
+                 
                 <h4>
                    7. Must Use react-hook-form in the registration & login page. Using react hook form in another place is optional.
                 </h4>
-                <h4>
-                    8. Use the Environment variables both on the client side & server side.
-                </h4>
+                
                 <h4>
                     9. Implement JWT token for Login and Registration systems (Email/ password & social login). You will send the token for the Dashboard routes and verify the user.
                 </h4>
-                <h4>
-                    10. Create a 404 page. Add any interesting image/ animation & a back-to-home button on the 404 page. Do not add header & footer in this page.
-                </h4>
+                 
             </div> 
         </div>
     );

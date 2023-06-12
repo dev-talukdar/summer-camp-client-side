@@ -19,7 +19,7 @@ const PopularClassCard = ({ pclass }) => {
         console.log(pclass);
         if (user && user.email) {
             const classAddedToCart = { classId: _id, course_name, course_picture_url, total_enrollment, rating, instructor_name, available_seats, price, email: user.email }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://summer-camp-server-side-navy.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
