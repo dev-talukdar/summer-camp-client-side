@@ -47,8 +47,7 @@ const requirement = () => {
 
             </h4>
             <h4>
-                10. Instructor Dashboard:
-                It will be private & only an instructor can access this route.
+                10. Instructor Dashboard: 
 
                 Add a Class: This page will have a form with the following fields:
 

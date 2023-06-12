@@ -46,27 +46,26 @@ const Dashboard = () => {
                                 <img className='' src={user.photoURL} alt="" />
                             </div>
                         </div>
-                        <p className="mt-3">{user.displayName}</p>
+                        <p className="mt-3 text-center">{user.displayName}</p>
                     </div>}
 
                     {
                         isAdmin ? <>
-                            <li className="mt-64">
+                            <li className="mt-10">
                                 <NavLink to="/dashboard/admin-home"><BsBriefcaseFill></BsBriefcaseFill>Admin Home</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/manage-classes"><MdOutlineManageHistory></MdOutlineManageHistory>Manage Classes</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/manage-users"><FaUserCog></FaUserCog>Manage Users</NavLink></li>
 
                         </> : isInstructor? <> 
                        
-                            <li className="mt-64">
-                                <NavLink to="/dashboard/instructor-home"><BsBriefcaseFill></BsBriefcaseFill>Instructor Home</NavLink></li>
+                            <li className="mt-10"><NavLink to="/dashboard/instructor-home"><BsBriefcaseFill></BsBriefcaseFill>Instructor Home</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/my-classes"><MdOutlineManageHistory></MdOutlineManageHistory>My Classes</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/add-a-class"><MdOutlineManageHistory></MdOutlineManageHistory>Add A Class</NavLink></li>
                             <li className="mt-2"><NavLink to="/dashboard/total-enrolled-students"><FaUserCog></FaUserCog>Total Enrolled Students</NavLink></li>
 
                         </> : <> 
 
-                            <li className="mt-64">
+                            <li className="mt-10">
                                 <NavLink to="/dashboard/selected-class"><BsBriefcaseFill></BsBriefcaseFill>My Selected Classes
                                     <span className="badge badge-primary">+{cart?.length || 0}</span>
                                 </NavLink>

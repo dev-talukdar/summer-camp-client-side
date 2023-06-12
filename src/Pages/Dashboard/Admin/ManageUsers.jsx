@@ -1,13 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 
 const ManageUsers = () => {
+    const [axiosSecure] = useAxiosSecure()
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json()
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
 
     const handleMakeAdmin = user => {
@@ -61,6 +63,7 @@ const ManageUsers = () => {
                         <thead>
                             <tr>
                                 <th>#</th> 
+                                <th>PHOTO</th>
                                 <th>NAME</th>
                                 <th>EMAIL</th>
                                 <th>TYPE</th>
@@ -75,6 +78,7 @@ const ManageUsers = () => {
                                     key={user._id}
                                 >
                                     <td> {index + 1} </td> 
+                                    <td> {user.photoURL} </td> 
                                     <td>{user.name} </td>
                                     <td>{user.email} </td>
                                     <td>{user.role}</td>

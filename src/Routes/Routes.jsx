@@ -19,6 +19,8 @@ import InstructorHome from "../Pages/Dashboard/Instructor/InstructorHome";
 import MyClass from "../Pages/Dashboard/Instructor/MyClass";
 import AddClass from "../Pages/Dashboard/Instructor/AddClass";
 import TotalEnrolledStudents from "../Pages/Dashboard/Instructor/TotalEnrolledStudents";
+import AdminRoutes from "./AdminRoutes";
+import InstructorRoutes from "./InstructorRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -59,31 +61,31 @@ export const router = createBrowserRouter([
         },
         {
           path: 'admin-home',
-          element: <PrivateRoutes><AdminHome></AdminHome></PrivateRoutes>
+          element: <AdminRoutes><AdminHome></AdminHome></AdminRoutes>
         },
         {
           path: 'manage-classes',
-          element: <PrivateRoutes><ManageClasses></ManageClasses></PrivateRoutes>
+          element: <AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
         },
         {
           path: 'manage-users',
-          element: <PrivateRoutes><ManageUsers></ManageUsers></PrivateRoutes>
+          element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
         },
         {
           path: 'instructor-home',
-          element: <PrivateRoutes><InstructorHome></InstructorHome></PrivateRoutes>
+          element: <InstructorRoutes><InstructorHome></InstructorHome></InstructorRoutes>
         },
         {
           path: 'my-classes',
-          element: <PrivateRoutes><MyClass></MyClass></PrivateRoutes>
+          element: <InstructorRoutes><MyClass></MyClass></InstructorRoutes>
         },
         {
           path: 'add-a-class',
-          element: <PrivateRoutes><AddClass></AddClass></PrivateRoutes>
+          element: <InstructorRoutes><AddClass></AddClass></InstructorRoutes>
         },
         {
           path: 'total-enrolled-students',
-          element: <PrivateRoutes><TotalEnrolledStudents></TotalEnrolledStudents></PrivateRoutes>
+          element: <InstructorRoutes><TotalEnrolledStudents></TotalEnrolledStudents></InstructorRoutes>
         },
         {
           path: 'selected-class',
