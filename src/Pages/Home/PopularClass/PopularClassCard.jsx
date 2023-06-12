@@ -1,19 +1,21 @@
 import { Rating } from "@smastrom/react-rating";
-import "@smastrom/react-rating/style.css";
-import { useContext } from "react";
-import { FaUsers } from 'react-icons/fa';
-import { AuthContext } from "../../../Provider/AuthProvider";
+import "@smastrom/react-rating/style.css"; 
+import { FaUsers } from 'react-icons/fa'; 
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../../hooks/useCart";
+import useAuth from "../../../hooks/useAuth";
 
 
 const PopularClassCard = ({ pclass }) => {
     const { course_name, course_picture_url, total_enrollment, rating, instructor_name, available_seats, price, _id } = pclass;
-    const { user } = useContext(AuthContext)
+    const { user } = useAuth()
     const [, refetch] = useCart()
     const navigate = useNavigate()
-    const location = useLocation()
+    const location = useLocation() 
+
+    const isAdmin = user?.role === 'admin';
+    const isInstructor = user?.role === 'instructor';
 
     const handleEnrollNow = pclass => {
         console.log(pclass);
@@ -87,7 +89,7 @@ const PopularClassCard = ({ pclass }) => {
                 </div>
 
                 <div className="card-actions">
-                    <button onClick={() => handleEnrollNow(pclass)} className="btn btn-primary">Enroll Now</button>
+                    <button onClick={() => handleEnrollNow(pclass)} className="btn btn-wide btn-primary" disabled={!isAdmin || !isInstructor} >Select</button>
                 </div>
             </div>
         </div>
